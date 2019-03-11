@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SBA Javascript: Hotel Booking Site</title>
+    <meta charset="utf-8">
+
+    <!--  Include the external style sheets including font awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- link the external css - keep it organized for reuse -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/video.css">
+    <link rel="stylesheet" href="./css/photo_styles.css">
+    <link rel="stylesheet" href="./css/travel.css">
+
+
+    <!-- SCCS example - change the footer content with globals and scss formatting -->
+    <link rel="stylesheet" href="./css/footer.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        /* show internal css styles*/
+        hr {
+            margin-top: 15px;
+        }
+
+        .title-bar {
+            text-transform: uppercase;
+            font-size: 30px;
+            background-color: #FEF5CC;
+        }
+
+        .row {
+            display: -ms-flexbox;
+            /* IE 10 */
+            display: flex;
+            -ms-flex-wrap: wrap;
+            /* IE 10 */
+            flex-wrap: wrap;
+            padding: 0 4px;
+        }
+
+        /* Create two equal columns that sits next to each other */
+        .column {
+            -ms-flex: 50%;
+            /* IE 10 */
+            flex: 50%;
+            padding: 0 4px;
+        }
+
+        .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+        }
+
+        /* Style the buttons */
+        .galbtn {
+            border: none;
+            outline: none;
+            padding: 10px 16px;
+            background-color: #f1f1f1;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .galbtn:hover {
+            background-color: #ddd;
+        }
+
+        .galbtn.active {
+            background-color: #666;
+            color: white;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            // Dynamically load the header and footer for reuse
+            $(function () {
+                $("#header").load("header.html");
+                //$("#footer").load("footer.html");
+            });
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <!-- Define the menu bar dynamically-->
+    <div id="header"></div>
+
+    <!-- Header -->
+    <div class="header" id="myHeader">
+        <h1>Image Grid</h1>
+        <p>Click on the buttons to change the grid view.</p>
+        <button class="btn" onclick="one()">1</button>
+        <button class="btn active" onclick="two()">2</button>
+        <button class="btn" onclick="four()">4</button>
+        <button class="btn" onclick="six()">6</button>
+    </div>
+
+    <!-- Photo Grid -->
+    <div class="row">
+        <div class="column">
+            <img src="https://picsum.photos/g/200/300" style="width:100%">
+            <img src="https://picsum.photos/g/300/300" style="width:100%">
+            <img src="https://picsum.photos/g/140/300" style="width:100%">
+            <img src="https://picsum.photos/g/200/150" style="width:100%">
+            <img src="images/5.jpeg" style="width:100%">
+            <img src="images/6.jpeg" style="width:100%">
+            <img src="https://picsum.photos/g/200/150" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="images/4.jpeg" style="width:100%">
+            <img src="https://picsum.photos/g/200/150" style="width:100%">
+            <img src="https://picsum.photos/g/200/300" style="width:100%">
+            <img src="images/6.jpeg" style="width:100%">
+            <img src="images/5.jpeg" style="width:100%">
+            <img src="images/1.jpeg" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="images/1.jpeg" style="width:100%">
+            <img src="images/4.jpeg" style="width:100%">
+            <img src="https://picsum.photos/g/200/150" style="width:100%">
+            <img src="images/1.jpeg" style="width:100%">
+            <img src="https://picsum.photos/g/200/150" style="width:100%">
+            <img src="https://picsum.photos/g/200/300" style="width:100%">
+            <img src="images/5.jpeg" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="images/4.jpeg" style="width:100%">
+            <img src="images/1.jpeg" style="width:100%">
+            <img src="https://picsum.photos/g/200/300" style="width:100%">
+            <img src="images/6.jpeg" style="width:100%">
+            <img src="images/5.jpeg" style="width:100%">
+            <img src="images/3.jpeg" style="width:100%">
+        </div>
+    </div>
+
+    <script>
+
+        // Get the elements with class="column"
+        var elements = document.getElementsByClassName("column");
+
+        // Declare a loop variable
+        var i;
+
+        // Full-width images
+        function one() {
+            for (i = 0; i < elements.length; i++) {
+                elements[i].style.msFlex = "100%";  // IE10
+                elements[i].style.flex = "100%";
+            }
+        }
+
+        // Two images side by side
+        function two() {
+            for (i = 0; i < elements.length; i++) {
+                elements[i].style.msFlex = "50%";  // IE10
+                elements[i].style.flex = "50%";
+            }
+        }
+
+        // Four images side by side
+        function four() {
+            for (i = 0; i < elements.length; i++) {
+                elements[i].style.msFlex = "25%";  // IE10
+                elements[i].style.flex = "25%";
+            }
+        }
+
+        // Four images side by side
+        function six() {
+            for (i = 0; i < elements.length; i++) {
+                elements[i].style.msFlex = "15%";  // IE10
+                elements[i].style.flex = "15%";
+            }
+        }
+        // Add active class to the current button (highlight it)
+        var header = document.getElementById("myHeader");
+        var btns = header.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>

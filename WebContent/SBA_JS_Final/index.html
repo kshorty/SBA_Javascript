@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SBA Javascript: Hotel Booking Site</title>
+    <meta charset="utf-8">
+
+    <!--  Include the external style sheets including font awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- link the external css - keep it organized for reuse -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/video.css">
+    <link rel="stylesheet" href="./css/travel.css">
+
+
+    <!-- SCCS example - change the footer content with globals and scss formatting -->
+    <link rel="stylesheet" href="./css/footer.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        /* show internal css styles*/
+        hr {
+            margin-top: 15px;
+        }
+
+        .title-bar {
+            text-transform: uppercase;
+            font-size: 30px;
+            background-color: #FEF5CC;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            
+            // Dynamically load the header and footer for reuse
+            $(function () {
+                $("#header").load("header.html");
+                //$("#footer").load("footer.html");
+            });
+
+            // Generate a table of pictures to show top hotels - USE ARRAY of images
+            var images = [1, 2, 3, 4, 5, 6, 4, 2, 4, 5, 6, 2, 1, 5, 3, 2, 1];
+            var $tableBody = $('tbody'); // use a Id selector here
+            var rowHTML = '';
+
+            for (var i = 1; i <= images.length; i++) {
+                rowHTML += '<td><a data-index=' + i + '><img width="200" src="images/' + images[i] + '.jpeg">' + '</a></td>';
+
+                if (i % 5 == 0) {
+                    $tableBody.append('<tr>' + rowHTML + '</tr>');
+                    rowHTML = '';
+                }
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+    <!-- Define the menu bar dynamically-->
+    <div id="header"></div>
+
+    <div class="grid">
+        <div class="grid-row">
+            <img src="https://loremflickr.com/1200/240/architecture">
+        </div>
+        <div class="grid-row">
+            <div class="item" style="text-align: center;">
+                <hr />
+                <hr />
+                <h3>Find a beautiful hotel anywhere in the world. Experience the fun of travel away from home. Stay in
+                    luxury accomodation ANYWHERE in the world.</h3>
+
+                <button class="btn" onclick="window.location.href='book.html'">Schedule your Worldwide Stay</button>
+                <p />
+                <hr />
+                <hr />
+            </div>
+        </div>
+
+        <!--  internal anchor  -->
+        <a name="topHotels"></a>
+
+        <!-- Title bar extending past the others -->
+        <div class="header title-bar">Top 5 Luxury Stays</div>
+
+
+        <div class="grid">
+            <div class="grid-row">
+                <div class="item">
+                    <table class="table table-bordered location" border="1">
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Title bar extending past the others -->
+        <div class="header title-bar">Behind the scenes videos</div>
+        <div class="grid-row">
+            <div class="item">
+                <div class="video-responsive">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/G84e3R-Sy-E" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="item">
+                <div class="video-responsive">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Viwfx0DtjHE" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Only this page has the font awesome SASS override. The other pages do not. -->
+        <div class="footer">
+            <p>
+                All rights reserved 2019 Project ReCharge <i class="far fa-copyright" style="color: #4C6A82"></i>
+            </p>
+        </div>
+</body>
+
+</html>

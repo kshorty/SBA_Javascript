@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "FontAwesome";
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Create a style sheet where you can easily change the font family and font color 
+and background color of the footer */
+/* Style the text so the font color is the global color $primaryColor */
+p {
+  font: normal normal normal 14px/1 FontAwesome;
+}
+
+/* Style the footer so the background color is grey */
+.footer {
+  color: #FE8227;
+  padding: 10px;
+  text-align: center;
+}
+.footer p {
+  background-color: #FE8227;
+  color: white;
+  width: 100%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=footer.css.map */

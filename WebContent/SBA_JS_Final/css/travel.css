@@ -1,0 +1,357 @@
+@charset "ISO-8859-1";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #FEF5CC;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+.header {
+	background-color: #FEF5CC;
+	padding: 30px;
+	text-align: center;
+}
+
+/* Container for flexboxes */
+.row {
+	display: -webkit-flex;
+	display: flex;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	padding: 10px;
+	height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Style the footer */
+.footer {
+	background-color: #FEF5CC;
+	padding: 10px;
+	text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media ( max-width : 600px) {
+	.row {
+		-webkit-flex-direction: column;
+		flex-direction: column;
+	}
+}
+
+/* Form elements */
+select {
+	font-family: inherit;
+}
+
+.terms {
+	font-size: 12px;
+	color: darkgrey;
+	padding: 2px;
+}
+
+form {
+	background: #4C6A82;
+	padding: 10px 35px 10px 35px;
+	border-radius: 10px;
+	margin: 100px;
+}
+
+.input-container {
+	display: -ms-flexbox; /* IE10 */
+	display: flex;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.icon {
+	padding: 10px;
+	background: white;
+	color: pink;
+	min-width: 50px;
+	text-align: center;
+	border: 0px;
+}
+
+.input-wrapper {
+	border: 1px;
+}
+
+.input-field {
+	width: 100%;
+	border: 0px;
+	padding: 10px;
+	outline: none;
+	padding: 10px;
+}
+
+.input-container:focus-within {
+	border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.formbtn {
+	background-color: #FE8227;
+	color: white;
+	padding: 15px 20px;
+	border: none;
+	cursor: pointer;
+	width: 30%;
+	opacity: 0.9;
+}
+
+.formbtn:hover {
+	opacity: 1;
+}
+
+h2 {
+	color: white;
+}
+
+h3 {
+	color: #4C6A82;
+}
+
+/* Starter CSS for Menu */
+#cssmenu {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	width: auto;
+}
+
+#cssmenu ul, #cssmenu li {
+	color: #4C6A82; background : #FEF5CC;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background: #FEF5CC;
+}
+
+#cssmenu ul {
+	position: relative;
+	z-index: 597;
+}
+
+#cssmenu ul li {
+	float: left;
+	min-height: 1px;
+	vertical-align: middle;
+}
+
+#cssmenu ul li.hover, #cssmenu ul li:hover {
+	position: relative;
+	z-index: 599;
+	cursor: default;
+}
+
+#cssmenu ul ul {
+	visibility: hidden;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 598;
+	width: 100%;
+}
+
+#cssmenu ul ul li {
+	float: none;
+}
+
+#cssmenu ul ul ul {
+	top: 0;
+	left: 190px;
+	width: 190px;
+}
+
+#cssmenu ul li:hover>ul {
+	visibility: visible;
+}
+
+#cssmenu ul ul {
+	bottom: 0;
+	left: 0;
+}
+
+#cssmenu ul ul {
+	margin-top: 0;
+}
+
+#cssmenu ul ul li {
+	font-weight: normal;
+}
+
+#cssmenu a {
+	color: #4C6A82;
+	display: block;
+	line-height: 1em;
+	text-decoration: none;
+}
+/* Custom CSS Styles */
+#cssmenu {<!--
+	border-bottom: 4px solid #1b9bff;
+	-->
+}
+
+#cssmenu>ul {
+	*display: inline-block;
+}
+
+#cssmenu:after, #cssmenu ul:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+#cssmenu ul {
+	text-transform: uppercase;
+}
+
+#cssmenu ul ul {
+	text-transform: none;
+	min-width: 190px;
+}
+
+#cssmenu ul ul a {
+	border-top: 0 none;
+	line-height: 150%;
+	padding: 16px 20px;
+}
+
+#cssmenu ul ul ul {
+	border-top: 0 none;
+}
+
+#cssmenu ul ul li {
+	position: relative;
+}
+
+#cssmenu ul ul li:last-child>a {<!--
+	border-top: 1px solid #0082e7;
+	-->
+}
+
+#cssmenu ul ul li:hover>a {
+	background: rgb(255, 255, 255);
+	color: #FE8227;
+}
+
+#cssmenu ul ul li:last-child>a {
+	/* 	-moz-border-radius: 0 0 3px 3px;
+	-webkit-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px; */
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	-moz-box-shadow: 0 1px 0 grey;
+	-webkit-box-shadow: 0 1px 0 grey;
+	box-shadow: 0 1px 0 grey;
+}
+
+#cssmenu ul ul li:last-child:hover>a {
+	/* 	-moz-border-radius: 0 0 0 3px;
+	-webkit-border-radius: 0 0 0 3px;
+	border-radius: 0 0 0 3px; */
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+#cssmenu ul ul li.has-sub>a:after {
+	content: '+';
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	margin-top: -8px;
+}
+
+#cssmenu ul li:hover>a, #cssmenu ul li.active>a {
+	color: #FE8227;
+	background: #476F8C;
+}
+
+#cssmenu ul li.has-sub>a:after {
+	content: '+';
+	margin-left: 5px;
+}
+
+#cssmenu ul li.last ul {
+	left: auto;
+	right: 0;
+}
+
+#cssmenu ul li.last ul ul {
+	left: auto;
+	right: 99.5%;
+}
+
+#cssmenu a {
+	color: rgb(80, 104, 126) 104, 126);
+	padding: 0 20px;
+}
+
+#cssmenu>ul>li>a {
+	line-height: 48px;
+}
+
+/* The Grid */
+.grid {
+	background: #FEF5CC;
+	width: 100%;
+	display: table;
+	border-collapse: separate;
+	border-spacing: 15px;
+}
+
+.grid-row {
+	width: 100%;
+	display: table;
+	table-layout: fixed;
+	margin: 0 0 -15px 0;
+}
+
+.item {
+	display: table-cell;
+	background: #FEF5CC;
+	padding: 2%;
+}
+
+@media screen and (max-width: 480px) {
+	.grid-row {
+		display: block;
+		width: 100%;
+		margin: 0;
+	}
+	.item {
+		display: block;
+		width: 100%;
+		margin: 0 0 5px 0;
+	}
+}
+
+/* Set a style for the submit button */
+.btn {
+	color: white;
+	padding: 15px 20px;
+	border: none;
+	cursor: pointer;
+	opacity: 0.9;
+	text-transform: uppercase;
+}
+
+.btn:hover {
+	opacity: 1;
+}
+
+.img-responsive {
+	overflow: hidden;
+	padding-bottom: 1.25%;
+	position: relative;
+}

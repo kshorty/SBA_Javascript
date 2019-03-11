@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Add icon library -->
+    <!--  Include the external style sheets including font awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- link the external css - keep it organized for reuse -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/video.css">
+    <link rel="stylesheet" href="./css/photo_styles.css">
+    <link rel="stylesheet" href="./css/travel.css">
+
+
+    <!-- SCCS example - change the footer content with globals and scss formatting -->
+    <link rel="stylesheet" href="./css/footer.css">
+    <style>
+        table {
+	width: 100%;
+	padding: 5px;
+}
+
+td {
+	padding: 10px;
+}
+
+th {
+	padding: 10px;
+}
+
+.checkbox {
+	font-size: 14px;
+	color: white;
+	width: 98%;
+	text-align: left;
+	padding: 0px !important;
+}
+</style>
+
+    <title>Contact Us</title>
+    <script>
+        $(document).ready(function () {
+
+            // Dynamically load the header and footer for reuse
+            $(function () {
+                $("#header").load("header.html");
+                //$("#footer").load("footer.html");
+            });
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <!-- Define the menu bar dynamically-->
+    <div id="header"></div>
+
+    <div class="grid">
+        <div class="grid-row" style="align:center">
+            <form action="" style="max-width: 800px; margin: 0 0 50px 0;">
+                <h2>Email Us</h2>
+
+
+                <!-- Showing use of a table per the requirements -->
+                <table>
+                    <tr>
+                        <td><input class="input-field" type="text" pattern="[A-Za-z ]+" placeholder="First Name" name="fname" required></td>
+                        <td><input class="input-field" type="text" pattern="[A-Za-z ]+" placeholder="Last Name" name="lname"
+                                title="Name should only contain letters. e.g. John" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input class="input-field" type="text" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                name="email" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><textarea rows="15" class="input-field" required>Type your message here</textarea>
+                        </td>
+                    </tr>
+                    <tr>
+
+           
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" class="formbtn">Submit your message</button>
+                    </td>
+                </tr>
+                </table>
+            </form>
+
+        </div>
+    </div>
+    </div>
+
+    <div class="clear"></div>
+    <div class="footer">
+        <p>All rights reserved 2019 Project ReCharge &copy;</p>
+    </div>
+</body>
+
+</html>
